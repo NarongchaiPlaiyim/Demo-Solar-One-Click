@@ -511,7 +511,7 @@
 }
 .ms-bullets.ms-dir-h .ms-bullets-count {
 	position: relative;
-	right: -50%;
+	/*right: -50%;*/
 }
 
 .ms-sbar {position: absolute;}
