@@ -324,7 +324,9 @@ window.averta = {};
 })();
 //dev\slider\tools\TouchSwipe.js 
  
-;(function($){		"use strict";
+;(function($){
+	
+	"use strict";
 	
 	var isTouch = 'ontouchstart' in document;
 	var msPoiner = false;//window.navigator.msPointerEnabled;
@@ -346,7 +348,8 @@ window.averta = {};
 		this.onSwipe    = null;
 		this.swipeType  = 'horizontal';
 		
-		this.lastStatus = {};	
+		this.lastStatus = {};
+	
 	};
 	
 	var p = averta.TouchSwipe.prototype;
@@ -3960,7 +3963,7 @@ MSSliderEvent.RESERVED_SPACE_CHANGE = 'rsc'; // internal use//dev\slider\Slide.j
 		this.id = id;
 		if(typeof id === 'string')
 			this.$element = $('#' + id);
-		else 
+		else
 			this.$element = id.eq(0);
 
 		//create a copy from slider markup, it will be used in destroy method.
@@ -3978,7 +3981,7 @@ MSSliderEvent.RESERVED_SPACE_CHANGE = 'rsc'; // internal use//dev\slider\Slide.j
 			this.$element.addClass('ms-ie')
 						 .addClass('ms-ie' + $.browser.version.slice(0 , $.browser.version.indexOf('.')));
 		}
-		
+
 		// Android prefix class
 		var ua = navigator.userAgent.toLowerCase();
 		var isAndroid = ua.indexOf("android") > -1;
@@ -3988,30 +3991,30 @@ MSSliderEvent.RESERVED_SPACE_CHANGE = 'rsc'; // internal use//dev\slider\Slide.j
 
 		var that = this;
 		$.extend(this.options, options);
-		
+
 		this.aspect = this.options.width / this.options.height;
-		
+
 		this.$loading = $('<div></div>').
 						addClass('ms-loading-container').
 						insertBefore(this.$element).
 						append($('<div></div>').addClass('ms-loading'));
 
 		this.$loading.parent().css('position' , 'relative');
-		
-		
-		// old methods 
+
+
+		// old methods
 		if(this.options.autofill){
 			this.options.fullwidth = true;
 			this.options.fullheight = true;
 		}
-		
+
 		if(this.options.fullheight){
 			this.$element.addClass('ms-fullheight');
 		}
 
-		//this._setupSliderLayout();	
+		//this._setupSliderLayout();
 		this._resize();
-		
+
 		// define slide controller and api
 		this.slideController = new MSSlideController(this);
 		this.api = this.slideController;

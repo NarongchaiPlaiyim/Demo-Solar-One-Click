@@ -304,8 +304,6 @@ $(document).ready(function(e) {
 		heroSlider.control('arrows');
 		heroSlider.control('bullets');
 		heroSlider.setup('hero-slider' , {
-				width:1140,
-				height:455,
 				space:0,
 				speed: 18,
 				autoplay: true,
